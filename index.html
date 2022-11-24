@@ -10,11 +10,12 @@
             const accessToken = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkEwQjVCMUFCMTUzMjI1MzRDNUIxQUU3QTdEMjZDRkI3NDYzNTIwMzNSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6Im9MV3hxeFV5SlRURnNhNTZmU2JQdDBZMUlETSJ9.eyJuYmYiOjE2NjkyNzg2ODMsImV4cCI6MTY2OTI4NTg4MywiaXNzIjoiaHR0cHM6Ly9zYW1zdW5nLnN1bXRvdGFsLmhvc3QvYXBpc2VjdXJpdHkiLCJhdWQiOlsiZXh0YXBpcyIsImh0dHBzOi8vc2Ftc3VuZy5zdW10b3RhbC5ob3N0L2FwaXNlY3VyaXR5L3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJTQU1TVU5HRUxFQ1RST05JQ1NfUFJPRF9iMjRlNjZmNDgwZDE0YmVjYmI1NDg0YzQzYTQ1YTZkYyIsInN1YiI6ImJwby40IiwiYXV0aF90aW1lIjoxNjY5MjcwMzM4LCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJicG8uNCIsInVzZXJuYW1lIjoiYnBvLjQiLCJtYXNrZWR1c2VyaWQiOiJCRjMyMzE3MTY0QzMyODk5NUMzRDVGQjJFNEI2OTRCNCIsInJvbGUiOiJQb3J0YWwgVXNlciIsInRlbmFudCI6IlNBTVNVTkdFTEVDVFJPTklDU19QUk9EIiwiYnJva2Vyc2Vzc2lvbiI6ImM3NzJlMDBmOTg2NDQ2NTY4Y2E3OTkwNTQ0MzIyOTAwIiwiY3VsdHVyZSI6ImVuLVVTIiwibGFuZ3VhZ2UiOiJlbi11cyIsImRhdGVmb3JtYXQiOiJNTS9kZC95eXl5IiwidGltZWZvcm1hdCI6ImhoOm1tIGEiLCJ1c2VyaWQiOiIyMTAzNTciLCJwZXJzb25wayI6IjEwNjU4MyIsImd1ZXN0YWNjb3VudCI6IjAiLCJ1c2VydGltZXpvbmVpZCI6IkFzaWEvU2VvdWwiLCJ0d29MZXR0ZXJJU09MYW5ndWFnZU5hbWUiOiJlbiIsImlzcnRsIjoiRmFsc2UiLCJwZXJzb25ndWlkIjoiZWRhMWU0YmYtNDZlNS00ZmI4LTkyYjQtMDMxMjE1ZmUwYTkwIiwidXNlcmlkaGFzaCI6Ii0xOTIzNTc0NTI2Iiwid2ZtdXNlciI6IlRydWUiLCJwcm9wZXJuYW1lIjoiYnBvKzQiLCJqdGkiOiI0QzIzQzdFM0ZFMzJCMTJDRDgxRDlBNzMyREU5NjUxQSIsImlhdCI6MTY2OTI3ODY4Mywic2NvcGUiOlsiYWxsYXBpcyJdLCJhbXIiOlsicHdkIl19.RoBhuImQPD6GrxWjS1nMngGcu20j3RWNGfBwBoluMBY5B0CEDFmG8042GxAtzdXsmU5RpIK5CWe2YYflhjroAcp8wr1O97eU0-KepLyN7iEy1RYvnihBOPKjd4_c4Nd9uU7PVo5vtvpui_sFa2m-ZQQvMloq0hVEA6KFG11rpcNtO1FxI8opBpEjJvY_B86rVyoLmdGkKI8i_w76mBiRRp-iNCKBCeJXTjNj5l-CsZGSaLFmcDYDJ0gtGiIj3N1LX8EhIRPzB6c6YsUshvjLSDfYX58XlEA9nLGfP8sbxD7V_SbP8ugKu2ppSqt3xd7TJEKXx9wDpP2Qv5p6lz75OQ';
             const baseUrl = "https://project.sknetzero.co.kr";
             const response = await fetch(`${baseUrl}/open/pdf/galaxySummary`, {
-                method: "GET",
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${accessToken}`
                 },
+                body: JSON.stringify({token: accessToken})
             });
 
             if (response.status === 200) {
